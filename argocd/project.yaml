@@ -1,0 +1,15 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: argocd-learning
+  namespace: argocd
+spec:
+  description: "argocd learning"
+  sourceRepos:
+    - "*"
+  destinations:
+    - server: "*"
+      namespace: argocd-learning
+  clusterResourceWhitelist:
+    - group: "*"
+      kind: "Namespace"
